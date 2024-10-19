@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "axel",
+      "email": "axeldev@gmail.com"
+    }
+  ],
+  "products":[
+    {
+      "id": "bad_bunny",
+      "name": "Bad Bunny Forum Blue",
+      "marca": "Adidas",
+      "talla": "22.5, 25, 26.5, 28",
+      "color": "azul",
+      "precio": 8500
+    },
+    {
+      "id": "jordan_dior",
+      "name": "Jordan 1 Dior",
+      "marca": "Nike",
+      "talla": "28",
+      "color": "gris",
+      "precio": 120000
+    },
+    {
+      "id": "chamarra_condivo",
+      "name": "Soccer Condivo 22",
+      "marca": "Adidas",
+      "talla": "S, M, L",
+      "color": "negra",
+      "precio": 3850
+    }
+  ]
+}

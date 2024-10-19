@@ -1,0 +1,9 @@
+<h1>Almacén</h1>
+<mat-divider></mat-divider>
+
+<div class="grid bm-8 pt-2">
+  <div *ngFor="let product of product" class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <shop-card [product]="product"></shop-card>
+
+  </div>
+</div>

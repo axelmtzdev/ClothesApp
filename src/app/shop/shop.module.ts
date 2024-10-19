@@ -10,6 +10,8 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CardComponent } from './components/card/card.component';
 import { MaterialModule } from '../material/material.module';
 import { ProductImagePipe } from './pipes/product-image.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -21,12 +23,14 @@ import { ProductImagePipe } from './pipes/product-image.pipe';
     SearchPageComponent,
     CardComponent,
 
-    ProductImagePipe
+    ProductImagePipe,
+      ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
     ShopRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class ShopModule { }

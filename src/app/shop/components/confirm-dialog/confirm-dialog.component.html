@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>¿Estas seguro de realizar esta acción?</h1>
+<div mat-dialog-content>
+  <p>Esto proceso es irreversible, estas a punto de borrar el producto {{ data.name | titlecase}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancelar</button>
+  <span class="spacer"></span>
+  <button mat-raised-button color="warn" (click)="onConfirm()">Confirmar</button>
+</div>

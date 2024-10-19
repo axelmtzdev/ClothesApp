@@ -1,1 +1,59 @@
-<p>new-page works!</p>
+
+<h1>{{currentProduct.id ? 'Editar' : 'Agregar'}} Producto</h1>
+<mat-divider></mat-divider>
+
+<div class="grid pt-3">
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <mat-card-content>
+        <form class="grid" [formGroup]="productForm" (ngSubmit)="onSumbit()">
+
+          <mat-form-field class="col-12 ">
+            <mat-label>Nombre del producto</mat-label>
+            <input type="text" matInput required formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field class="col-12 ">
+            <mat-label>Marca</mat-label>
+            <mat-select required formControlName="marca">
+              <mat-option *ngFor="let marca of marca" [value]="marca.id">{{marca.desc}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Precio</mat-label>
+            <input type="number" matInput required formControlName="precio">
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Color</mat-label>
+            <input type="text" matInput required formControlName="color">
+          </mat-form-field>
+
+          <mat-form-field class="col-12 ">
+            <mat-label>Tallas</mat-label>
+            <input type="text" matInput required formControlName="talla">
+          </mat-form-field>
+
+          <mat-form-field class="col-12 ">
+            <mat-label>Imagen</mat-label>
+            <input type="text" matInput required formControlName="alt_img">
+          </mat-form-field>
+        </form>
+
+        <div class="flex justify-content-between">
+          <button *ngIf="currentProduct.id" mat-raised-button color="warn" (click)="onDeleteProduct()">Borrar</button>
+          <span></span>
+          <button  mat-raised-button color="accent" (click)="onSumbit()">Guardar</button>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <img  mat-card-image [src]="currentProduct | productImage" alt="Product Image" class="p-2 m-2">
+    </mat-card>
+  </div>
+</div>

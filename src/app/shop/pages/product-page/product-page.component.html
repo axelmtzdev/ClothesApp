@@ -1,1 +1,50 @@
-<p>product-page works!</p>
+<ng-template #divLoading>
+  <mat-grid-list cols="">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+      Cargando
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</ng-template>
+
+<div *ngIf="product; else divLoading" class="grid p-2">
+  <mat-card class="col-12 sm:col-6 p-2 mb-2">
+    <mat-card-header>
+      <mat-card-title>{{product.name | titlecase}}</mat-card-title>
+      <mat-card-subtitle>{{product.marca}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <img [src]="product | productImage" [alt]="product.name" mat-card-image class="p-2 m-2"/>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="col-12 sm:col-6 p-4 mb-6">
+    <mat-card-header>
+      <mat-card-title>Información</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item><strong>Precio: </strong>${{product.precio | number}}</mat-list-item>
+        <mat-list-item><strong>Color: </strong>{{product.color | titlecase}}</mat-list-item>
+        <mat-list-item><strong>Tallas: </strong></mat-list-item>
+
+        <mat-list-item><mat-chip-listbox>
+          <mat-chip *ngFor="let talla of product.talla.split(',') | slice:0:6">
+            {{talla}}
+          </mat-chip>
+        </mat-chip-listbox></mat-list-item>
+      </mat-list>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Regresar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

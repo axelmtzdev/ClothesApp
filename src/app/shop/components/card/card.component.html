@@ -4,7 +4,9 @@
   </mat-card-header>
 
 
-  <img mat-card-image [src]="product | productImage" [alt]="product.name">
+
+    <img mat-card-image [src]="product | productImage" [alt]="product.name" class="p-2">
+
 
   <mat-card-content class="mt-2">
     <mat-card-subtitle>${{product.precio | number}}</mat-card-subtitle>

@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "user": "axel",
       "email": "axeldev@gmail.com"
     }
   ],
-  "products":[
+  "products": [
     {
       "id": "bad_bunny",
       "name": "Bad Bunny Forum Blue",

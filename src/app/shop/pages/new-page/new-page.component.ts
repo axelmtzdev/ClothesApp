@@ -105,4 +105,8 @@ export class NewPageComponent implements OnInit {
     })
   }
 
+
+  goBack():void{
+    this.router.navigate(['/products/list']);
+  }
 }

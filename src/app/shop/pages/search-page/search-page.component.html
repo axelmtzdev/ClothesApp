@@ -1,1 +1,25 @@
-<p>search-page works!</p>
+<h1 class="text-3xl font-medium mt-3">Productos por marca</h1>
+<mat-divider></mat-divider>
+<form [formGroup]="myForm" class="mt-6">
+  <div class="grid mb-3">
+    <!-- PrimeFlex 'col' y 'form-control' reemplazado por Material -->
+    <div class="col-12 md:col-6"> <!-- PrimeFlex Grid para diferentes tamaños -->
+      <!-- Angular Material select -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Seleccione una marca</mat-label>
+        <mat-select formControlName="marca">
+          <mat-option value="">--Seleccione una marca--</mat-option>
+          <mat-option *ngFor="let marca of marca" [value]="marca">{{ marca }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+
+<div class="grid bm-8 pt-2">
+  <div *ngFor="let product of productsByBrand" class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <shop-card [product]="product"></shop-card>
+
+  </div>
+</div>
+
